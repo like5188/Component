@@ -39,40 +39,33 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion BuildVersion.compileSdkVersion
     buildToolsVersion BuildVersion.buildToolsVersion
-
     defaultConfig {
         minSdkVersion BuildVersion.minSdkVersion
         targetSdkVersion BuildVersion.targetSdkVersion
         testInstrumentationRunner BuildVersion.AndroidJUnitRunner
         multiDexEnabled true
     }
-    
     buildTypes {
         release {
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    
     applicationVariants.all { variant ->
         variant.outputs.all { variantOutput ->
             outputFileName = "${project.rootProject.name}-${variantOutput.name}-${defaultConfig.versionName}.apk"
         }
     }
-    
     dataBinding {
         enabled true
     }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
-
     packagingOptions {
         exclude 'META-INF/*'
     }
@@ -111,13 +104,11 @@ apply plugin: 'kotlin-kapt'
 android {
     compileSdkVersion BuildVersion.compileSdkVersion
     buildToolsVersion BuildVersion.buildToolsVersion
-
     defaultConfig {
         minSdkVersion BuildVersion.minSdkVersion
         targetSdkVersion BuildVersion.targetSdkVersion
         testInstrumentationRunner BuildVersion.AndroidJUnitRunner
     }
-
     buildTypes {
         release {
             consumerProguardFiles file('.').listFiles(new FilenameFilter() {
@@ -128,26 +119,21 @@ android {
             })
         }
     }
-
     libraryVariants.all { variant ->
         variant.outputs.all { variantOutput ->
             outputFileName = "${project.name}-${variantOutput.name}-${defaultConfig.versionName}.aar"
         }
     }
-
     dataBinding {
         enabled true
     }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
-
     resourcePrefix = "${project.name.replace("-", "_")}_"
 }
 
@@ -179,13 +165,11 @@ apply plugin: 'kotlin-android'
 android {
     compileSdkVersion BuildVersion.compileSdkVersion
     buildToolsVersion BuildVersion.buildToolsVersion
-
     defaultConfig {
         minSdkVersion BuildVersion.minSdkVersion
         targetSdkVersion BuildVersion.targetSdkVersion
         testInstrumentationRunner BuildVersion.AndroidJUnitRunner
     }
-
     buildTypes {
         release {
             consumerProguardFiles file('.').listFiles(new FilenameFilter() {
@@ -196,12 +180,12 @@ android {
             })
         }
     }
-
     libraryVariants.all { variant ->
         variant.outputs.all { variantOutput ->
             outputFileName = "${project.name}-${variantOutput.name}-${defaultConfig.versionName}.aar"
         }
     }
+    resourcePrefix = "${project.name.replace("-", "_")}_"
 }
 
 dependencies {
