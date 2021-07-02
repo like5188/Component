@@ -1,0 +1,4 @@
+rootProject.name = "Component"
+include ':app'
+include ':component-plugin'
+include ':component'
