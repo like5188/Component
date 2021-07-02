@@ -30,7 +30,8 @@
 ```
 
 2、分为三种情况，插件自动生成的配置分别如下：
-    ① app 模块
+
+① app 模块
 ```groovy
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
@@ -102,7 +103,7 @@ dependencies {
 }
 ```
 
-    ② module 模块
+② module 模块
 ```groovy
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
@@ -171,7 +172,7 @@ dependencies {
 }
 ```
 
-    ③ service 模块
+③ service 模块
 ```groovy
 apply plugin: 'kotlin-android'
 
