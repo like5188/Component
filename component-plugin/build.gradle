@@ -15,7 +15,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     implementation gradleApi()
     implementation "com.android.tools.build:gradle:4.2.1"
-    implementation "com.github.like5188:Dependencies:0.1.5"
+    implementation "com.github.like5188:Dependencies:0.1.7"
 }
 
 // 发布到本地进行测试
