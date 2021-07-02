@@ -9,7 +9,6 @@
 ```groovy
     allprojects {
         repositories {
-            ...
             maven { url 'https://jitpack.io' }
         }
     }
@@ -17,7 +16,7 @@
 在Module的gradle中加入：
 ```groovy
     dependencies {
-        implementation 'com.github.like5188:Component:版本号'
+        implementation 'com.github.like5188.Component:component:版本号'
     }
 ```
 
