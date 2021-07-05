@@ -12,6 +12,7 @@
             maven { url 'https://jitpack.io' }
         }
         dependencies {
+            classpath "com.github.like5188:Dependencies:0.1.8"
             classpath "com.github.like5188.Component:component-plugin:版本号"
         }
     }
@@ -24,6 +25,7 @@
 ```
 在Module的gradle中加入：
 ```groovy
+    import com.like.dependencies.*
     plugins {
         id 'component-plugin'
     }
@@ -90,6 +92,7 @@ dependencies {
     androidTestImplementation Testing.androidx_junit
     androidTestImplementation Testing.espresso_core
 
+    implementation ThirdPart.Like.Dependencies
     implementation Google.material
     implementation ThirdPart.Like.Component
     debugImplementation ThirdPart.leakcanary_android
@@ -151,6 +154,7 @@ dependencies {
     androidTestImplementation Testing.androidx_junit
     androidTestImplementation Testing.espresso_core
 
+    implementation ThirdPart.Like.Dependencies
     implementation Google.material
     implementation ThirdPart.Like.Component
     implementation Google.auto_service
@@ -195,5 +199,6 @@ dependencies {
     testImplementation Testing.jUnit
     androidTestImplementation Testing.androidx_junit
     androidTestImplementation Testing.espresso_core
+    implementation ThirdPart.Like.Dependencies
 }
 ```

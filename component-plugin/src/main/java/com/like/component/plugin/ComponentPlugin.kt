@@ -9,9 +9,11 @@ import com.like.component.plugin.config.ServiceConfig
 import com.like.dependencies.AndroidX
 import com.like.dependencies.BuildVersion
 import com.like.dependencies.Testing
+import com.like.dependencies.ThirdPart
 import org.gradle.api.GradleException
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.jetbrains.kotlin.gradle.targets.js.npm.importedPackageDir
 
 class ComponentPlugin : Plugin<Project> {
     override fun apply(project: Project) {
@@ -35,6 +37,7 @@ class ComponentPlugin : Plugin<Project> {
         // dependencies {}
         project.dependencies.apply {
             add("implementation", project.fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+            add("implementation", ThirdPart.Like.Dependencies)
             add("implementation", AndroidX.appcompat)
             add("implementation", AndroidX.core_ktx)
             add("testImplementation", Testing.jUnit)
