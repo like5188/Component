@@ -84,13 +84,13 @@ repositories {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation ThirdPart.Like.Dependencies
     implementation AndroidX.appcompat
     implementation AndroidX.core_ktx
     testImplementation Testing.jUnit
     androidTestImplementation Testing.androidx_junit
     androidTestImplementation Testing.espresso_core
 
-    implementation ThirdPart.Like.Dependencies
     implementation Google.material
     implementation ThirdPart.Like.Component
     debugImplementation ThirdPart.leakcanary_android
@@ -146,13 +146,13 @@ repositories {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation ThirdPart.Like.Dependencies
     implementation AndroidX.appcompat
     implementation AndroidX.core_ktx
     testImplementation Testing.jUnit
     androidTestImplementation Testing.androidx_junit
     androidTestImplementation Testing.espresso_core
 
-    implementation ThirdPart.Like.Dependencies
     implementation Google.material
     implementation ThirdPart.Like.Component
     implementation Google.auto_service
@@ -192,11 +192,11 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation ThirdPart.Like.Dependencies
     implementation AndroidX.appcompat
     implementation AndroidX.core_ktx
     testImplementation Testing.jUnit
     androidTestImplementation Testing.androidx_junit
     androidTestImplementation Testing.espresso_core
-    implementation ThirdPart.Like.Dependencies
 }
 ```
