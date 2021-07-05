@@ -12,7 +12,6 @@
             maven { url 'https://jitpack.io' }
         }
         dependencies {
-            classpath "com.github.like5188:Dependencies:0.1.8"
             classpath "com.github.like5188.Component:component-plugin:版本号"
         }
     }
