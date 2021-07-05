@@ -1,8 +1,8 @@
 plugins {
     id 'java-library'
     id 'kotlin'
-    id 'maven-publish'
-    id 'com.github.dcendents.android-maven'
+    id 'com.github.dcendents.android-maven'// 用于发布到jitpack
+    id 'maven-publish'// 用于发布到本地仓库 mavenLocal()
 }
 
 java {
@@ -18,7 +18,7 @@ dependencies {
     implementation "com.github.like5188:Dependencies:0.1.8"
 }
 
-// 发布到本地进行测试
+// 发布到本地仓库 mavenLocal() 进行测试，通过 classpath "com.like:component-plugin:1.0" 获取。
 publishing {
     publications {
         ComponentPlugin(MavenPublication) {
