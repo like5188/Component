@@ -13,7 +13,6 @@ import com.like.dependencies.ThirdPart
 import org.gradle.api.GradleException
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.jetbrains.kotlin.gradle.targets.js.npm.importedPackageDir
 
 class ComponentPlugin : Plugin<Project> {
     override fun apply(project: Project) {
