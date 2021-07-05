@@ -25,7 +25,6 @@
 ```
 在Module的gradle中加入：
 ```groovy
-    import com.like.dependencies.*
     plugins {
         id 'component-plugin'
     }
