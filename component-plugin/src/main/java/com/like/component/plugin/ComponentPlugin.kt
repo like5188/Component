@@ -9,7 +9,6 @@ import com.like.component.plugin.config.ServiceConfig
 import com.like.dependencies.AndroidX
 import com.like.dependencies.BuildVersion
 import com.like.dependencies.Testing
-import com.like.dependencies.ThirdPart
 import org.gradle.api.GradleException
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -36,12 +35,12 @@ class ComponentPlugin : Plugin<Project> {
         // dependencies {}
         project.dependencies.apply {
             add("implementation", project.fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-            add("implementation", ThirdPart.Like.Dependencies)
+            add("implementation", "com.github.like5188:Dependencies:0.2.0")
             add("implementation", AndroidX.appcompat)
             add("implementation", AndroidX.core_ktx)
-            add("testImplementation", Testing.jUnit)
-            add("androidTestImplementation", Testing.androidx_junit)
-            add("androidTestImplementation", Testing.espresso_core)
+            add("testImplementation", Testing.Java.jUnit)
+            add("androidTestImplementation", Testing.Android.androidx_junit)
+            add("androidTestImplementation", Testing.Android.espresso_core)
         }
 
         // 各种类型模块的独有配置

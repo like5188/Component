@@ -3,7 +3,6 @@ package com.like.component.plugin.config
 import com.android.build.gradle.LibraryExtension
 import com.android.build.gradle.internal.api.LibraryVariantOutputImpl
 import com.like.dependencies.Google
-import com.like.dependencies.ThirdPart
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
@@ -48,7 +47,7 @@ class ModuleConfig : IConfig {
 
         project.dependencies.apply {
             add("implementation", Google.material)// 包含 androidx.constraintlayout
-            add("implementation", ThirdPart.Like.Component.component)
+            add("implementation", "com.github.like5188.Component:component:2.0.3")
             add("implementation", Google.auto_service)
             add("kapt", Google.auto_service)
         }

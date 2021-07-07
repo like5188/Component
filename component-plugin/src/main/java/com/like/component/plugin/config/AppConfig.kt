@@ -58,7 +58,7 @@ class AppConfig : IConfig {
 
         project.dependencies.apply {
             add("implementation", Google.material)// 包含 androidx.constraintlayout
-            add("implementation", ThirdPart.Like.Component.component)
+            add("implementation", "com.github.like5188.Component:component:2.0.3")
             add("debugImplementation", ThirdPart.leakcanary_android)
         }
     }
