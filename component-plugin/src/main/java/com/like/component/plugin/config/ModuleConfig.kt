@@ -25,18 +25,14 @@ class ModuleConfig : IConfig {
                     }
                 }
             }
-            compileOptions {
-                sourceCompatibility = JavaVersion.VERSION_1_8
-                targetCompatibility = JavaVersion.VERSION_1_8
-            }
             project.tasks.withType(KotlinCompile::class.java) {
                 it.kotlinOptions {
                     jvmTarget = "1.8"
                 }
             }
-            dataBinding {
-                isEnabled = true
-            }
+            compileOptions.sourceCompatibility = JavaVersion.VERSION_1_8
+            compileOptions.targetCompatibility = JavaVersion.VERSION_1_8
+            dataBinding.isEnabled = true
             resourcePrefix = "${project.name.replace("-", "_")}_"
         }
 

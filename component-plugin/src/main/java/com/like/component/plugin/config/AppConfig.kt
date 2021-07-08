@@ -25,10 +25,6 @@ class AppConfig : IConfig {
                     }
                 }
             }
-            compileOptions {
-                it.sourceCompatibility = JavaVersion.VERSION_1_8
-                it.targetCompatibility = JavaVersion.VERSION_1_8
-            }
             project.tasks.withType(KotlinCompile::class.java) {
                 it.kotlinOptions {
                     jvmTarget = "1.8"
@@ -37,9 +33,9 @@ class AppConfig : IConfig {
             packagingOptions {
                 it.exclude("META-INF/*")
             }
-            dataBinding {
-                it.isEnabled = true
-            }
+            compileOptions.sourceCompatibility = JavaVersion.VERSION_1_8
+            compileOptions.targetCompatibility = JavaVersion.VERSION_1_8
+            dataBinding.isEnabled = true
         }
 
         project.repositories.flatDir {
