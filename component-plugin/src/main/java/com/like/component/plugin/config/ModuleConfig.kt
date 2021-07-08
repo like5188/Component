@@ -16,9 +16,9 @@ class ModuleConfig : IConfig {
                     buildType.consumerProguardFile(it)
                 }
             }
-            libraryVariants.forEach { variant ->
+            libraryVariants.all { variant ->
                 // debug、release
-                variant.outputs.forEach { variantOutput ->
+                variant.outputs.all { variantOutput ->
                     // aar 文件重命名
                     if (variantOutput is LibraryVariantOutputImpl) {
                         variantOutput.outputFileName = "${project.name}-${variantOutput.name}-${defaultConfig.versionName}.aar"
