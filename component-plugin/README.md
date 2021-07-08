@@ -37,12 +37,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion BuildVersion.compileSdkVersion
-    buildToolsVersion BuildVersion.buildToolsVersion
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
     defaultConfig {
-        minSdkVersion BuildVersion.minSdkVersion
-        targetSdkVersion BuildVersion.targetSdkVersion
-        testInstrumentationRunner BuildVersion.AndroidJUnitRunner
+        minSdkVersion 23
+        targetSdkVersion 30
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
     }
     buildTypes {
@@ -84,16 +84,15 @@ repositories {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation ThirdPart.Like.Dependencies
-    implementation AndroidX.appcompat
-    implementation AndroidX.core_ktx
-    testImplementation Testing.jUnit
-    androidTestImplementation Testing.androidx_junit
-    androidTestImplementation Testing.espresso_core
+    implementation "androidx.appcompat:appcompat:1.2.0"
+    implementation "androidx.core:core-ktx:1.6.0"
+    testImplementation "junit:junit:4.13.2"
+    androidTestImplementation "androidx.test.ext:junit:1.1.3"
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.4.0"
+    implementation "com.google.android.material:material:1.4.0"// 包含 androidx.constraintlayout
 
-    implementation Google.material
-    implementation ThirdPart.Like.Component
-    debugImplementation ThirdPart.leakcanary_android
+    implementation "com.github.like5188.Component:component:2.0.5"
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:2.7"
 }
 ```
 
@@ -103,12 +102,12 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion BuildVersion.compileSdkVersion
-    buildToolsVersion BuildVersion.buildToolsVersion
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
     defaultConfig {
-        minSdkVersion BuildVersion.minSdkVersion
-        targetSdkVersion BuildVersion.targetSdkVersion
-        testInstrumentationRunner BuildVersion.AndroidJUnitRunner
+        minSdkVersion 23
+        targetSdkVersion 30
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -146,17 +145,16 @@ repositories {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation ThirdPart.Like.Dependencies
-    implementation AndroidX.appcompat
-    implementation AndroidX.core_ktx
-    testImplementation Testing.jUnit
-    androidTestImplementation Testing.androidx_junit
-    androidTestImplementation Testing.espresso_core
+    implementation "androidx.appcompat:appcompat:1.2.0"
+    implementation "androidx.core:core-ktx:1.6.0"
+    testImplementation "junit:junit:4.13.2"
+    androidTestImplementation "androidx.test.ext:junit:1.1.3"
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.4.0"
+    implementation "com.google.android.material:material:1.4.0"// 包含 androidx.constraintlayout
 
-    implementation Google.material
-    implementation ThirdPart.Like.Component
-    implementation Google.auto_service
-    kapt Google.auto_service
+    implementation "com.github.like5188.Component:component:2.0.5"
+    implementation "com.google.auto.service:auto-service:1.0"
+    kapt "com.google.auto.service:auto-service:1.0"
 }
 ```
 
@@ -165,12 +163,12 @@ dependencies {
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion BuildVersion.compileSdkVersion
-    buildToolsVersion BuildVersion.buildToolsVersion
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
     defaultConfig {
-        minSdkVersion BuildVersion.minSdkVersion
-        targetSdkVersion BuildVersion.targetSdkVersion
-        testInstrumentationRunner BuildVersion.AndroidJUnitRunner
+        minSdkVersion 23
+        targetSdkVersion 30
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -192,11 +190,10 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation ThirdPart.Like.Dependencies
-    implementation AndroidX.appcompat
-    implementation AndroidX.core_ktx
-    testImplementation Testing.jUnit
-    androidTestImplementation Testing.androidx_junit
-    androidTestImplementation Testing.espresso_core
+    implementation "androidx.appcompat:appcompat:1.2.0"
+    implementation "androidx.core:core-ktx:1.6.0"
+    testImplementation "junit:junit:4.13.2"
+    androidTestImplementation "androidx.test.ext:junit:1.1.3"
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.4.0"
 }
 ```

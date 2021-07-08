@@ -2,8 +2,6 @@ package com.like.component.plugin.config
 
 import com.android.build.gradle.AppExtension
 import com.android.build.gradle.internal.api.ApkVariantOutputImpl
-import com.like.dependencies.Google
-import com.like.dependencies.ThirdPart
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
@@ -57,9 +55,9 @@ class AppConfig : IConfig {
         }
 
         project.dependencies.apply {
-            add("implementation", Google.material)// 包含 androidx.constraintlayout
-            add("implementation", "com.github.like5188.Component:component:2.0.4")
-            add("debugImplementation", ThirdPart.leakcanary_android)
+            add("implementation", "com.google.android.material:material:1.4.0")// 包含 androidx.constraintlayout
+            add("implementation", "com.github.like5188.Component:component:2.0.5")
+            add("debugImplementation", "com.squareup.leakcanary:leakcanary-android:2.7")
         }
     }
 }

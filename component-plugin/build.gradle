@@ -15,7 +15,6 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     implementation gradleApi()
     implementation "com.android.tools.build:gradle:4.2.2"
-    implementation "com.github.like5188:Dependencies:0.2.1"
 }
 
 // 发布到本地仓库 mavenLocal() 进行测试，通过 classpath "com.like:component-plugin:1.0" 获取。

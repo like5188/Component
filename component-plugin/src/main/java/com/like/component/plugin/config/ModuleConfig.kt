@@ -2,7 +2,6 @@ package com.like.component.plugin.config
 
 import com.android.build.gradle.LibraryExtension
 import com.android.build.gradle.internal.api.LibraryVariantOutputImpl
-import com.like.dependencies.Google
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
@@ -46,10 +45,10 @@ class ModuleConfig : IConfig {
         }
 
         project.dependencies.apply {
-            add("implementation", Google.material)// 包含 androidx.constraintlayout
-            add("implementation", "com.github.like5188.Component:component:2.0.4")
-            add("implementation", Google.auto_service)
-            add("kapt", Google.auto_service)
+            add("implementation", "com.google.android.material:material:1.4.0")// 包含 androidx.constraintlayout
+            add("implementation", "com.github.like5188.Component:component:2.0.5")
+            add("implementation", "com.google.auto.service:auto-service:1.0")
+            add("kapt", "com.google.auto.service:auto-service:1.0")
         }
     }
 }
