@@ -28,19 +28,19 @@ class ComponentPlugin : Plugin<Project> {
             defaultConfig {
                 it.minSdkVersion(BuildVersion.minSdkVersion)
                 it.targetSdkVersion(BuildVersion.targetSdkVersion)
-                it.testInstrumentationRunner = BuildVersion.AndroidJUnitRunner
+                it.testInstrumentationRunner = Testing.AndroidX.testInstrumentationRunner
             }
         }
 
         // dependencies {}
         project.dependencies.apply {
             add("implementation", project.fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-            add("implementation", "com.github.like5188:Dependencies:0.2.0")
+            add("implementation", "com.github.like5188:Dependencies:0.2.1")
             add("implementation", AndroidX.appcompat)
             add("implementation", AndroidX.core_ktx)
-            add("testImplementation", Testing.Java.jUnit)
-            add("androidTestImplementation", Testing.Android.androidx_junit)
-            add("androidTestImplementation", Testing.Android.espresso_core)
+            add("testImplementation", Testing.Java.junit)
+            add("androidTestImplementation", Testing.AndroidX.junit)
+            add("androidTestImplementation", Testing.AndroidX.espresso_core)
         }
 
         // 各种类型模块的独有配置

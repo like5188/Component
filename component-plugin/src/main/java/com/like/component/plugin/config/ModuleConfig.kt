@@ -47,7 +47,7 @@ class ModuleConfig : IConfig {
 
         project.dependencies.apply {
             add("implementation", Google.material)// 包含 androidx.constraintlayout
-            add("implementation", "com.github.like5188.Component:component:2.0.3")
+            add("implementation", "com.github.like5188.Component:component:2.0.4")
             add("implementation", Google.auto_service)
             add("kapt", Google.auto_service)
         }
