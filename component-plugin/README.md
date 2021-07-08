@@ -15,12 +15,6 @@
             classpath "com.github.like5188.Component:component-plugin:版本号"
         }
     }
-
-    allprojects {
-        repositories {
-            maven { url 'https://jitpack.io' }
-        }
-    }
 ```
 在Module的gradle中加入：
 ```groovy
@@ -29,7 +23,7 @@
     }
 ```
 
-2、分为三种情况，插件自动生成的配置分别如下：
+2、插件自动生成的 gradle 配置分为三种情况，分别如下：
 
 ① app 模块
 ```groovy
