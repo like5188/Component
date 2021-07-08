@@ -15,6 +15,12 @@
             classpath "com.github.like5188.Component:component-plugin:版本号"
         }
     }
+
+    allprojects {
+        repositories {
+            maven { url 'https://jitpack.io' }
+        }
+    }
 ```
 在Module的gradle中加入：
 ```groovy
