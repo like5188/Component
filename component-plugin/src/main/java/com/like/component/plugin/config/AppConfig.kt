@@ -16,12 +16,12 @@ class AppConfig : IConfig {
                 buildType.minifyEnabled(true)
                 buildType.proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
             }
-            applicationVariants.all {
+            applicationVariants.all { variant ->
                 // debug、release
-                it.outputs.all {
+                variant.outputs.all { variantOutput ->
                     // apk 文件重命名
-                    if (it is ApkVariantOutputImpl) {
-                        it.outputFileName = "${project.rootProject.name}-${it.name}-${defaultConfig.versionName}.apk"
+                    if (variantOutput is ApkVariantOutputImpl) {
+                        variantOutput.outputFileName = "${project.rootProject.name}-${variantOutput.name}-${defaultConfig.versionName}.apk"
                     }
                 }
             }
