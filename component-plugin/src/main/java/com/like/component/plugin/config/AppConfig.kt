@@ -11,11 +11,13 @@ class AppConfig : IConfig {
         project.plugins.apply("kotlin-kapt")
 
         project.extensions.getByType(AppExtension::class.java).apply {
-            defaultConfig.multiDexEnabled = true
             buildTypes.getByName("release") { buildType ->
                 buildType.minifyEnabled(true)
                 buildType.isShrinkResources = true
-                buildType.proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+                buildType.proguardFile(getDefaultProguardFile("proguard-android-optimize.txt"))
+                project.fileTree(".").filter { it.extension == "pro" }.forEach {
+                    buildType.proguardFile(it)
+                }
             }
             applicationVariants.all { variant ->
                 // debug、release
@@ -53,7 +55,7 @@ class AppConfig : IConfig {
 
         project.dependencies.apply {
             add("implementation", "com.google.android.material:material:1.4.0")// 包含 androidx.constraintlayout
-            add("implementation", "com.github.like5188.Component:component:2.0.6")
+            add("implementation", "com.github.like5188.Component:component:2.0.7")
             add("debugImplementation", "com.squareup.leakcanary:leakcanary-android:2.7")
         }
     }

@@ -10,6 +10,13 @@ class ServiceConfig : IConfig {
             project.fileTree(".").filter { it.extension == "pro" }.forEach {
                 defaultConfig.consumerProguardFile(it)
             }
+            buildTypes.getByName("release") { buildType ->
+                buildType.minifyEnabled(true)
+                buildType.proguardFile(getDefaultProguardFile("proguard-android-optimize.txt"))
+                project.fileTree(".").filter { it.extension == "pro" }.forEach {
+                    buildType.proguardFile(it)
+                }
+            }
             libraryVariants.all { variant ->
                 // debug、release
                 variant.outputs.all { variantOutput ->

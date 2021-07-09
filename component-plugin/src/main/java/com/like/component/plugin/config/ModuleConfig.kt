@@ -14,6 +14,13 @@ class ModuleConfig : IConfig {
             project.fileTree(".").filter { it.extension == "pro" }.forEach {
                 defaultConfig.consumerProguardFile(it)
             }
+            buildTypes.getByName("release") { buildType ->
+                buildType.minifyEnabled(true)
+                buildType.proguardFile(getDefaultProguardFile("proguard-android-optimize.txt"))
+                project.fileTree(".").filter { it.extension == "pro" }.forEach {
+                    buildType.proguardFile(it)
+                }
+            }
             libraryVariants.all { variant ->
                 // debug、release
                 variant.outputs.all { variantOutput ->
@@ -40,7 +47,7 @@ class ModuleConfig : IConfig {
 
         project.dependencies.apply {
             add("implementation", "com.google.android.material:material:1.4.0")// 包含 androidx.constraintlayout
-            add("implementation", "com.github.like5188.Component:component:2.0.6")
+            add("implementation", "com.github.like5188.Component:component:2.0.7")
             add("implementation", "com.google.auto.service:auto-service:1.0")
             add("kapt", "com.google.auto.service:auto-service:1.0")
         }

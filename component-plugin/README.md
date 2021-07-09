@@ -43,12 +43,18 @@ android {
         minSdkVersion 23
         targetSdkVersion 30
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        multiDexEnabled true
     }
     buildTypes {
         release {
             minifyEnabled true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            shrinkReleaseRes true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
+            proguardFiles file('.').listFiles(new FilenameFilter() {
+                @Override
+                boolean accept(File file, String s) {
+                    return s.endsWith(".pro")
+                }
+            })
         }
     }
     applicationVariants.all { variant ->
@@ -108,13 +114,21 @@ android {
         minSdkVersion 23
         targetSdkVersion 30
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles file('.').listFiles(new FilenameFilter() {
+            @Override
+            boolean accept(File file, String s) {
+                return s.endsWith(".pro")
+            }
+        })
     }
     buildTypes {
         release {
-            consumerProguardFiles file('.').listFiles(new FilenameFilter() {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
+            proguardFiles file('.').listFiles(new FilenameFilter() {
                 @Override
                 boolean accept(File file, String s) {
-                    return file.extension == "pro"
+                    return s.endsWith(".pro")
                 }
             })
         }
@@ -169,13 +183,21 @@ android {
         minSdkVersion 23
         targetSdkVersion 30
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles file('.').listFiles(new FilenameFilter() {
+            @Override
+            boolean accept(File file, String s) {
+                return s.endsWith(".pro")
+            }
+        })
     }
     buildTypes {
         release {
-            consumerProguardFiles file('.').listFiles(new FilenameFilter() {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
+            proguardFiles file('.').listFiles(new FilenameFilter() {
                 @Override
                 boolean accept(File file, String s) {
-                    return file.extension == "pro"
+                    return s.endsWith(".pro")
                 }
             })
         }
