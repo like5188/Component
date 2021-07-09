@@ -11,10 +11,8 @@ class ModuleConfig : IConfig {
         project.plugins.apply("kotlin-kapt")
 
         project.extensions.getByType(LibraryExtension::class.java).apply {
-            buildTypes.getByName("release") { buildType ->
-                project.fileTree(".").filter { it.extension == "pro" }.forEach {
-                    buildType.consumerProguardFile(it)
-                }
+            project.fileTree(".").filter { it.extension == "pro" }.forEach {
+                defaultConfig.consumerProguardFile(it)
             }
             libraryVariants.all { variant ->
                 // debug、release
