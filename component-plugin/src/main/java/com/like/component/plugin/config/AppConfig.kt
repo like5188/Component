@@ -14,6 +14,7 @@ class AppConfig : IConfig {
             defaultConfig.multiDexEnabled = true
             buildTypes.getByName("release") { buildType ->
                 buildType.minifyEnabled(true)
+                buildType.isShrinkResources = true
                 buildType.proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
             }
             applicationVariants.all { variant ->
